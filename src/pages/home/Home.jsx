@@ -3,7 +3,7 @@ import axios from "axios";
 import Post from "../../components/Post";
 import './Home.css';
 
-function Home(props) {
+function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, toggleLoading] = useState(true);
   const [error, toggleError] = useState(false);
@@ -50,6 +50,7 @@ function Home(props) {
             link={post.data.subreddit_name_prefixed}
             comments={post.data.num_comments}
             ups={post.data.ups}
+            subreddit={post.data.subreddit}
           />
         ))}
       </div>
