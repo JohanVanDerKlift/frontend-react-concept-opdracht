@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function Subreddit(props) {
   const [subredditPost, setSubredditPost] = useState({});
@@ -39,6 +40,8 @@ function Subreddit(props) {
 
           <h2>Number of subscribers</h2>
           <div>{subredditPost.data.subscribers}</div>
+
+          <Link to={'/'}>Take me back</Link>
         </>
       }
     </>

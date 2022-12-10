@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import Post from "../../components/Post";
+import Post from "../../components/posts/Post";
 import './Home.css';
 
 function Home() {
@@ -37,23 +37,28 @@ function Home() {
 
   return (
     <>
-      <h1>Hottest posts</h1>
-      <span>On reddit right now</span>
-      {loading && <span>Loading...</span>}
-      {error && <span>An error occurred while loading the page</span>}
+      <main className="main">
+        <div className="top-container">
+          <h1>Hottest posts</h1>
+          <span>On reddit right now</span>
+        </div>
+        {loading && <span>Loading...</span>}
+        {error && <span>An error occurred while loading the page</span>}
 
-      <div className="posts-container">
-        {posts.map((post) => (
-          <Post
-            key={post.data.created}
-            title={post.data.title}
-            link={post.data.subreddit_name_prefixed}
-            comments={post.data.num_comments}
-            ups={post.data.ups}
-            subreddit={post.data.subreddit}
-          />
-        ))}
-      </div>
+        <div className="posts-container">
+          {posts.map((post) => (
+            <Post
+              key={post.data.created}
+              title={post.data.title}
+              link={post.data.subreddit_name_prefixed}
+              comments={post.data.num_comments}
+              ups={post.data.ups}
+              subreddit={post.data.subreddit}
+              url={post.data.url}
+            />
+          ))}
+        </div>
+      </main>
     </>
   );
 }

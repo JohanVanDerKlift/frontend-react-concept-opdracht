@@ -1,0 +1,14 @@
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    color: #FDF4F2;
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 20px;
+    margin-right: 100px;
+}
+
+.navigation > li {
+    margin-right: 30px;
+}

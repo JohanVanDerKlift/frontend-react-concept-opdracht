@@ -5,12 +5,26 @@
     padding: 15px;
     width: 350px;
     height: 200px;
-    border: 1px solid black;
     margin: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 5px #EBE3E1;
+}
+.link {
+    text-decoration: none;
 }
 
 .bottom-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.title {
+    color: #292929;
 
 }
+
+.post-link:link {
+    color: #dd3038;
+    font-weight: bold;
+}
+
