@@ -3,16 +3,25 @@ import './Header.css'
 import Navigation from "../navigation/Navigation";
 import logo from '../../assets/logo.png'
 
-function Header() {
+function Header({header}) {
+
   return (
     <>
       <header className="header">
         <Navigation></Navigation>
         <div className="header-container">
-          <img src={logo} alt="Reddit Logo"/>
-          <span>Reddit</span>
+          {header ?
+            <>
+              <h1>{header}</h1>
+              <h4>Subreddit specifications</h4>
+            </>
+            :
+            <>
+              <img src={logo} alt="Reddit Logo"/>
+              <span>Reddit</span>
+            </>
+          }
         </div>
-
       </header>
     </>
   );

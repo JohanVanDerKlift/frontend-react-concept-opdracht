@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Post from "../../components/posts/Post";
 import './Home.css';
+import Header from "../../components/header/Header";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -15,28 +16,23 @@ function Home() {
       toggleError(false);
       try {
         toggleLoading(true);
-        const result = await axios.get('https://www.reddit.com/hot.json?limit=15', {
-          signal: controller.signal,
-        });
+        const result = await axios.get('https://www.reddit.com/hot.json?limit=15');
         console.log(result.data.data.children);
         setPosts(result.data.data.children);
       } catch (e) {
-        toggleError(true);
         console.error(e);
+        toggleError(true);
       }
       toggleLoading(false);
     }
 
     fetchPosts();
 
-    return function cleanup() {
-      controller.abort();
-    }
-
   }, [])
 
   return (
     <>
+      <Header></Header>
       <main className="main">
         <div className="top-container">
           <h1>Hottest posts</h1>
