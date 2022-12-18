@@ -1,0 +1,19 @@
+.main {
+    background-color: #FDF4F2;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    color: #292929;
+}
+
+.posts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

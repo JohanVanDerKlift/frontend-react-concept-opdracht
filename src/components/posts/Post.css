@@ -1,0 +1,31 @@
+.post-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    width: 350px;
+    min-height: 150px;
+    margin: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 5px #EBE3E1;
+}
+.link {
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: #292929;
+
+}
+
+.post-link:link {
+    color: #dd3038;
+    font-weight: bold;
+}
+
